@@ -21,7 +21,7 @@ public class MQConfig {
     //This is the queue
     @Bean
     public Queue queue() {
-        return  new Queue("QUEUE");
+        return  new Queue(QUEUE);
     }
 
     //This is the exchange
@@ -32,7 +32,6 @@ public class MQConfig {
     }
 
     @Bean
-
     // method to bind the queue and the Exchange together
     public Binding binding(Queue queue, TopicExchange exchange){
 
@@ -44,7 +43,6 @@ public class MQConfig {
 
     // convert particular message to json object
     @Bean
-
     public MessageConverter messageConverter() {
         return new Jackson2JsonMessageConverter();
     }
